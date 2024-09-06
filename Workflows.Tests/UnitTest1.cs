@@ -7,4 +7,10 @@ public class UnitTest1
     {
         Assert.Equal(1,1);
     }
+    [Fact]
+    public void Test2()
+    {
+        List<int> folks = [1, 2, 3];
+        Assert.Equal(3, folks.Count);
+    }
 }
