@@ -50,7 +50,7 @@ public class UnitTest1
         var builder = new ConfigurationBuilder();
         builder.AddUserSecrets<UnitTest1>()
         .AddEnvironmentVariables();
-        return builder.Build().GetValue<string>("AzureSqlEnv") ??
+        return builder.Build().GetValue<string>("mssqlenv") ??
         throw new Exception("no connection string found");
     }
 }
