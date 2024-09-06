@@ -20,14 +20,14 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    # - name: Setup .NET
-    #   uses: actions/setup-dotnet@v4
-    #   with:
-    #     dotnet-version: 8.0.x
-    # - name: Restore dependencies
-    #   run: dotnet restore
-    # - name: Build
-    #   run: dotnet build --no-restore
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
 
     - name: set env
       run: export AzureSqlEnv="Server=tcp:asynchandler.database.windows.net,1433;Initial Catalog=asynchandler;Persist Security Info=False;User ID=ah;Password=#asynchandler@2024;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=10;"
