@@ -20,14 +20,14 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    # services:
-    #   mssql:
-    #     image: mcr.microsoft.com/mssql/server:2019
-    #     ports:
-    #       - 1433:1433
-    #     env:
-    #       ACCEPT_EULA: true
-    #       MSSQL_SA_PASSWORD: sysadmin@2024
+    services:
+      mssql:
+        image: mcr.microsoft.com/mssql/server:2019
+        ports:
+          - 1433:1433
+        env:
+          ACCEPT_EULA: true
+          MSSQL_SA_PASSWORD: sysadmin@2024
 
     steps:
     - uses: actions/checkout@v4
@@ -40,10 +40,6 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-
-    - name: show envs
-      run: export
-      shell: bash
 
     - name: Test
       run: dotnet test --no-build --verbosity normal
