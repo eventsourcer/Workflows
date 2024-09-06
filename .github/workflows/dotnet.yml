@@ -11,7 +11,7 @@ on:
 
 env:
   azuresqlenv: "Server=tcp:asynchandler.database.windows.net,1433;Initial Catalog=asynchandler;Persist Security Info=False;User ID=ah;Password=#asynchandler@2024;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=10;"
-  MSSqlEnv: "Server=localhost,1433;Initial Catalog=asynchandler;Persist Security Info=False;User ID=sa;Password=sysadmin@2024;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=true;Connection Timeout=10;"
+  mssqlenv: "Server=localhost,1433;Initial Catalog=asynchandler;Persist Security Info=False;User ID=sa;Password=sysadmin@2024;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=true;Connection Timeout=10;"
   mssql_db: asynchandler
   mssql_password: sysadmin@2024
 
@@ -40,6 +40,10 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
+
+    - name: show envs
+      run: exports
+      shell: bash
 
     - name: Test
       run: dotnet test --no-build --verbosity normal
