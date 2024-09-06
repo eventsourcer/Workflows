@@ -42,7 +42,7 @@ jobs:
       run: dotnet build --no-restore
 
     - name: show envs
-      run: exports
+      run: export
       shell: bash
 
     - name: Test
