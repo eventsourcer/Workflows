@@ -1,13 +1,22 @@
 using AsyncHandler.EventSourcing;
 using AsyncHandler.EventSourcing.Configuration;
 
+// var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+// {
+//     EnvironmentName = Environments.Production
+// });
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Configuration.AddEnvironmentVariables().AddUserSecrets<Program>();
+
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-var conn = builder.Configuration["AzureSqlDatabase"] ?? "";
+var env = "AzureSqlEnv";
+var conn = builder.Configuration[env] ?? throw new Exception($"not connection string found {env}");
+
 builder.Services.AddAsyncHandler(asynchandler =>
 {
     asynchandler.AddEventSourcing(source =>
@@ -16,7 +25,6 @@ builder.Services.AddAsyncHandler(asynchandler =>
     });
 });
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
