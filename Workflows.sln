@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workflows.Tests", "Workflows.Tests\Workflows.Tests.csproj", "{BE80C1F6-4EAA-40C5-A024-FC1E677B4449}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workflows", "Workflows\Workflows.csproj", "{082EC157-4CBE-442E-8D6C-FCD6B5BC4513}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE80C1F6-4EAA-40C5-A024-FC1E677B4449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE80C1F6-4EAA-40C5-A024-FC1E677B4449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE80C1F6-4EAA-40C5-A024-FC1E677B4449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE80C1F6-4EAA-40C5-A024-FC1E677B4449}.Release|Any CPU.Build.0 = Release|Any CPU
+		{082EC157-4CBE-442E-8D6C-FCD6B5BC4513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{082EC157-4CBE-442E-8D6C-FCD6B5BC4513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{082EC157-4CBE-442E-8D6C-FCD6B5BC4513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{082EC157-4CBE-442E-8D6C-FCD6B5BC4513}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
