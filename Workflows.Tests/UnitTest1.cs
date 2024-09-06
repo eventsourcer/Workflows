@@ -48,8 +48,9 @@ public class UnitTest1
     private static string BuildConfiguration()
     {
         var builder = new ConfigurationBuilder();
-        builder.AddUserSecrets<UnitTest1>();
-        return builder.Build().GetValue<string>("AzureSqlDatabase") ??
+        builder.AddUserSecrets<UnitTest1>()
+        .AddEnvironmentVariables();
+        return builder.Build().GetValue<string>("AzureSqlVariable") ??
         throw new Exception("no connection string found");
     }
 }
