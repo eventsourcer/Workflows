@@ -10,12 +10,24 @@ on:
     branches: [ "main" ]
 
 env:
-  AzureSqlEnv: "Server=tcp:asynchandler.database.windows.net,1433;Initial Catalog=asynchandler;Persist Security Info=False;User ID=ah;Password=#asynchandler@2024;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=10;"
+  azuresqlenv: "Server=tcp:asynchandler.database.windows.net,1433;Initial Catalog=asynchandler;Persist Security Info=False;User ID=ah;Password=#asynchandler@2024;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=10;"
+  MSSqlEnv: "Server=localhost,1433;Initial Catalog=asynchandler;Persist Security Info=False;User ID=sa;Password=sysadmin@2024;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=true;Connection Timeout=10;"
+  mssql_db: asynchandler
+  mssql_password: sysadmin@2024
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
+
+    # services:
+    #   mssql:
+    #     image: mcr.microsoft.com/mssql/server:2019
+    #     ports:
+    #       - 1433:1433
+    #     env:
+    #       ACCEPT_EULA: true
+    #       MSSQL_SA_PASSWORD: sysadmin@2024
 
     steps:
     - uses: actions/checkout@v4
@@ -28,14 +40,6 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-
-    - name: set env
-      run: export AzureSqlEnv="Server=tcp:asynchandler.database.windows.net,1433;Initial Catalog=asynchandler;Persist Security Info=False;User ID=ah;Password=#asynchandler@2024;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=10;"
-      shell: bash
-
-    - name: show envs
-      run: export
-      shell: bash
 
     - name: Test
       run: dotnet test --no-build --verbosity normal
