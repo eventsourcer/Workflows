@@ -42,7 +42,7 @@ jobs:
       run: dotnet build --no-restore
 
     - name: create db
-      run: sqlcmd -s localhost -U sa -P sysadmin@2024 -p "create database asynchandler;"
+      run: sqlcmd -s localhost -U sa -P sysadmin@2024 -p -i "create database asynchandler;"
       shell: bash
 
     - name: Test
