@@ -28,6 +28,7 @@ public class UnitTest1
         var sp = BuildCOntainer();
         var conn = BuildConfiguration();
         var client = new AzureSqlClient<OrderAggregate>(conn, sp, EventSources.AzureSql);
+        await client.Init();
 
         //when
         var aggregate = await client.CreateOrRestore();
