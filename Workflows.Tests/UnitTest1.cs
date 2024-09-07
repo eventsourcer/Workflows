@@ -41,7 +41,7 @@ public class UnitTest1
     public async Task TestAzureSqlClient()
     {
         // giveb
-        var source = EventSources.SqlServer;
+        var source = EventSources.AzureSql;
         var sp = BuildCOntainer();
         var conn = BuildConfiguration(source);
         var client = new AzureSqlClient<OrderAggregate>(conn, sp, source);
