@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 env:
-  azuresqlenv: secrets.AZURESQLDATABASE
+  azuresqlenv: ${{ secrets.AZURESQLDATABASE }}
   mssqlenv: "Server=localhost,1433;Initial Catalog=asynchandler;Persist Security Info=False;User ID=sa;Password=sysadmin@2024;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=true;Connection Timeout=10;"
   mssql_db: asynchandler
   mssql_password: sysadmin@2024
