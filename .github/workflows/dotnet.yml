@@ -43,7 +43,7 @@ jobs:
 
     - name: create db
       run: |
-        bash: build.sh
+        ./build.sh
       env:
         azuresqlenv: ${{ env.azuresqlenv }}
         mssqlenv: ${{ env.mssqlenv }}
