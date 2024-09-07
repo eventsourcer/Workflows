@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 env:
-  azuresqlenv: "Server=tcp:asynchandler.database.windows.net,1433;Initial Catalog=asynchandler;Persist Security Info=False;User ID=ah;Password=#asynchandler@2024;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=10;"
+  azuresqlenv: secrets.AZURESQLDATABASE
   mssqlenv: "Server=localhost,1433;Initial Catalog=asynchandler;Persist Security Info=False;User ID=sa;Password=sysadmin@2024;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=true;Connection Timeout=10;"
   mssql_db: asynchandler
   mssql_password: sysadmin@2024
@@ -42,7 +42,7 @@ jobs:
       run: dotnet build --no-restore
 
     - name: create db
-      run: sqlcmd -s localhost -U sa -P ${{ env.mssql_password }} -q "create database ${{ env.mssql_db }};"
+      run: sqlcmd -s localhost -U sa -P ${{ env.mssql_password }} -q "create database ${{ env. }};"
       shell: bash
 
     - name: Test
