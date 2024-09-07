@@ -27,7 +27,7 @@ public class UnitTest1
         // giveb
         var sp = BuildCOntainer();
         var conn = BuildConfiguration();
-        var client = new AzureSqlClient<OrderAggregate>(conn, sp, EventSources.AzureSql);
+        var client = new AzureSqlClient<OrderAggregate>(conn, sp, EventSources.SqlServer);
         await client.Init();
 
         //when
