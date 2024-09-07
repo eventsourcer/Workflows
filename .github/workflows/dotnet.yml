@@ -43,9 +43,6 @@ jobs:
 
     - name: create db
       run: ./build.sh
-      env:
-        azuresqlenv: ${{ env.azuresqlenv }}
-        mssqlenv: ${{ env.mssqlenv }}
 
     # - name: Test
     #   run: dotnet test --no-build --verbosity normal
