@@ -42,8 +42,8 @@ jobs:
     #   run: dotnet build --no-restore
 
     - name: create db
-      run: |
-        bash: ./build.sh
+      run: build.sh
+      shell: bash
       env:
         azuresqlenv: ${{ env.azuresqlenv }}
         mssqlenv: ${{ env.mssqlenv }}
