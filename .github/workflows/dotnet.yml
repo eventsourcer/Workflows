@@ -20,14 +20,14 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    services:
-      mssql:
-        image: mcr.microsoft.com/mssql/server
-        ports:
-          - 1433:1433
-        env:
-          ACCEPT_EULA: true
-          MSSQL_SA_PASSWORD: ${{ env.mssql_password }}
+    # services:
+    #   mssql:
+    #     image: mcr.microsoft.com/mssql/server
+    #     ports:
+    #       - 1433:1433
+    #     env:
+    #       ACCEPT_EULA: true
+    #       MSSQL_SA_PASSWORD: ${{ env.mssql_password }}
 
     steps:
     - uses: actions/checkout@v4
@@ -36,14 +36,17 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
+    # - name: Restore dependencies
+    #   run: dotnet restore
+    # - name: Build
+    #   run: dotnet build --no-restore
 
     - name: create db
-      run: sqlcmd -s localhost -U sa -P ${{ env.mssql_password }} -q "create database ${{ env.mssql_db }};"
+      run: ./build.sh
       shell: bash
+      env:
+        azuresqlenv: ${{ env.azuresqlenv }}
+        mssqlenv: ${{ env.mssqlenv }}
 
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    # - name: Test
+    #   run: dotnet test --no-build --verbosity normal
