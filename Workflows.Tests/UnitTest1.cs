@@ -43,6 +43,7 @@ public class UnitTest1
         services.AddSingleton<ILogger<AzureSqlClient<OrderAggregate>>>(new Logger<AzureSqlClient<OrderAggregate>>(factory));
         Dictionary<EventSources,IClientConfig> configs = new();
         configs.Add(EventSources.AzureSql, new AzureSqlConfig());
+        configs.Add(EventSources.SqlServer, new SqlServerConfig());
         services.AddKeyedSingleton("SourceConfig", configs);
         return services.BuildServiceProvider();
     }
