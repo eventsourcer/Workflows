@@ -27,7 +27,7 @@ jobs:
           - 1433:1433
         env:
           ACCEPT_EULA: true
-          MSSQL_SA_PASSWORD: sysadmin@2024
+          MSSQL_SA_PASSWORD: ${{ env.mssql_password }}
 
     steps:
     - uses: actions/checkout@v4
@@ -42,7 +42,7 @@ jobs:
       run: dotnet build --no-restore
 
     - name: create db
-      run: sqlcmd -s localhost -U sa -P sysadmin@2024 -q "create database asynchandler;"
+      run: sqlcmd -s localhost -U sa -P ${{ env.mssql_password }} -q "create database ${{ env.mssql_db }};"
       shell: bash
 
     - name: Test
