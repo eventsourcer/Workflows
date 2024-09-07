@@ -42,7 +42,7 @@ jobs:
       run: dotnet build --no-restore
 
     - name: create db
-      run: sqlcmd -s localhost -U sa -P ${{ env.mssql_password }} -q "create database ${{ env. }};"
+      run: sqlcmd -s localhost -U sa -P ${{ env.mssql_password }} -q "create database ${{ env.mssql_db }};"
       shell: bash
 
     - name: Test
