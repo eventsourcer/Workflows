@@ -1,0 +1,14 @@
+
+name: Pack nugets
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+jobs:
+  build:
+    name: pack it
+    runs-on: ubuntu-latest
+    
+            
