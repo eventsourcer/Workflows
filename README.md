@@ -5,6 +5,8 @@
 [![My Skills](https://skillicons.dev/icons?i=github)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 [![My Skills](https://skillicons.dev/icons?i=azure)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 [![My Skills](https://skillicons.dev/icons?i=vscode)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+[![My Skills](https://skillicons.dev/icons?i=vscode)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+[![My Skills](https://skillicons.dev/icons?i=vscode)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 [![Github follow](https://img.shields.io/badge/follow-asynchandler-red?logo=github)](https://github.com/asynchandler)
 [![Github follow](https://img.shields.io/badge/follow-eventsourcer-red?logo=github)](https://github.com/eventsourcer)
