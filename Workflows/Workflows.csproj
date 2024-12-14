@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="AsyncHandler.EventSourcing" Version="1.0.0-alpha.0" />
+    <PackageReference Include="EventStorage" Version="0.0.0-alpha.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.3" />
   </ItemGroup>
 
