@@ -1,4 +1,4 @@
-# asynchandler
+# eventstorage
 
 ### A lightweight event sourcing framework designed for your event-store of choice.
 [![My Skills](https://skillicons.dev/icons?i=dotnet)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
